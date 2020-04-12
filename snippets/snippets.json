@@ -1,0 +1,149 @@
+{
+  "component": {
+    "prefix": "rc",
+    "body": [
+      "import React, { Component } from 'react';",
+      "",
+      "// import { Container } from './styles';",
+      "",
+      "export default class ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}} extends Component {",
+      "  render() {",
+      "    return <div />;",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Create ReactJS Stateful Component"
+  },
+
+  "reduxComponent": {
+    "prefix": "rrc",
+    "body": [
+      "import React, { Component } from 'react';",
+      "",
+      "import { bindActionCreators } from 'redux';",
+      "import { connect } from 'react-redux';",
+      "",
+      "// import { Container } from './styles';",
+      "",
+      "class ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}} extends Component {",
+      "  render() {",
+      "    return <div />;",
+      "  }",
+      "}",
+      "",
+      "const mapStateToProps = state => ({});",
+      "",
+      "// const mapDispatchToProps = dispatch =>",
+      "//   bindActionCreators(Actions, dispatch);",
+      "",
+      "export default connect(",
+      "  mapStateToProps,",
+      "  // mapDispatchToProps",
+      ")(${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}});",
+      ""
+    ],
+    "description": "Create ReactJS Stateful Redux Component"
+  },
+
+  "statelessComponent": {
+    "prefix": "rsc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "// import { Container } from './styles';",
+      "",
+      "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}} = () => <div />;",
+      "",
+      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
+      ""
+    ],
+    "description": "Create ReactJS Stateless Component"
+  },
+
+  "reduxStatelessComponent": {
+    "prefix": "rrsc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "import { bindActionCreators } from 'redux';",
+      "import { connect } from 'react-redux';",
+      "",
+      "// import { Container } from './styles';",
+      "",
+      "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}} = () => <div />;",
+      "",
+      "const mapStateToProps = state => ({});",
+      "",
+      "// const mapDispatchToProps = dispatch =>",
+      "//   bindActionCreators(Actions, dispatch);",
+      "",
+      "export default connect(",
+      "  mapStateToProps,",
+      "  // mapDispatchToProps",
+      ")(${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}});",
+      ""
+    ],
+    "description": "Create ReactJS Stateless Redux Component"
+  },
+
+  "functionalComponent": {
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "// import { Container } from './styles';",
+      "",
+      "export default function ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}() {",
+      "  return (",
+      "    <div />",
+      "  );",
+      "}",
+      ""
+    ],
+    "description": "Create ReactJS Functional Component"
+  },
+
+  "styles": {
+    "prefix": "styled-react",
+    "body": [
+      "import styled from 'styled-components';",
+      "",
+      "export const ${1:Container} = styled.${2:div}`",
+      "  ${3}",
+      "`;",
+      ""
+    ],
+    "description": "Create ReactJS Styled Components file"
+  },
+
+  "api": {
+    "prefix": "api",
+    "body": [
+      "import axios from 'axios';",
+      "",
+      "const api = axios.create({",
+      "  baseURL: ${1},",
+      "});",
+      "",
+      "export default api;",
+      ""
+    ],
+    "description": "Create Axios Configuration file"
+  },
+
+  "mapStateToProps": {
+    "prefix": "mapstatetoprops",
+    "body": ["const mapStateToProps = state => ({", "  ${1}", "});"],
+    "description": "Create Redux method mapStateToProps"
+  },
+
+  "mapDispatchToProps": {
+    "prefix": "mapdispatchtoprops",
+    "body": [
+      "const mapDispatchToProps = dispatch =>",
+      "  bindActionCreators(${1}, dispatch);"
+    ],
+    "description": "Create Redux method mapDispatchToProps"
+  }
+}
